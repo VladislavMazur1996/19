@@ -1,0 +1,29 @@
+{% extends 'advert/default.html' %}
+
+
+{% block title %}
+Post
+{% endblock title %}
+
+{% block content %}
+   <h1>Объявления:</h1>
+   <hr>
+<hr>
+   {% if posts %}
+           {% for post in posts %}
+             <a href= ' {{post.id}} ' class="text" ><header class="py-1">
+                <div class="container px-lg-5">
+                    <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                        <div class="m-1 m-lg-1">
+                            <h1 class="display-5 fw-bold">
+                               <td>{{ post.title }}</td>
+                               <td>{{ post.text|safe }}</td>
+                            </h1>
+                    </div>
+                </div>
+             </div>
+           {% endfor %}
+   {% else %}
+       <h2>Новостей нет!</h2>
+   {% endif %}
+{% endblock content %}

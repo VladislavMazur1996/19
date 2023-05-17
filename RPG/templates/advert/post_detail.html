@@ -1,0 +1,11 @@
+{% extends 'advert/default.html' %}
+
+{% block content %}
+   <tr>
+       <td>{{ post.title }}</td>
+       <td>{{ post.text|safe }}</td>
+   </tr>
+  <form action="/advert/{{post.id}}/comment_new" target="_blank">
+    <button>Откликнуться</button>
+  </form>
+{% endblock content %}
